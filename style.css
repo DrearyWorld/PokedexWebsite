@@ -1,11 +1,11 @@
-.center {
+.center { /* this centers the logo */
    display: block;
    margin-left: auto;
    margin-right: auto;
    width: 30%;
 }
 
-.searchBox { 
+.searchBox { /* this centers the searchbox*/
     display: flex;
     justify-content: center;
     align-items: center;
