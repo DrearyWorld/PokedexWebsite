@@ -6,7 +6,7 @@ const fetchPokemon = () => {
     for (let i = 1; i <= 151; i++) {
         const url = `https://pokeapi.co/api/v2/pokemon/${i}` // ${i} iterates through 1-151 and makes the api call for each 1-151 pokemon
         promises.push(fetch(url).then((res) => res.json()));
-        // fetch information 
+        //fetch information 
         //returns a promise, in that promise define callback
         //after make request and get response, converts response to json
     }
