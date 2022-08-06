@@ -25,6 +25,17 @@
     margin-top: 50px;
 }
 
+.poke_name {
+    font-size: 30px;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.poke_type {
+    font-size: 13px;
+    font-weight: lighter;
+    color: #666;
+}
+
 .pokemon-block {
     list-style: none;
     padding: 40px;
@@ -53,4 +64,6 @@
     }
 }
 
-
+.hide {
+    display:none;
+}

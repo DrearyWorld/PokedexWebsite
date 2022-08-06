@@ -1,10 +1,5 @@
 const pokemonCard = document.querySelector(".pokemon-card");
-const searchInput = document.querySelector("[data-search");
-
-searchInput.addEventListener("input", (e) => {
-    searchString = e.target.value;
-});
-
+const searchInput = document.getElementById("search");
 
 const fetchPokemon = () => {
     const promises = [];
@@ -15,14 +10,13 @@ const fetchPokemon = () => {
         //returns a promise, in that promise define callback
         //after make request and get response, converts response to json
     }
-
     Promise.all(promises).then( (results) => {
         const pokemon = results.map((data) => ({
             name: data.name, //name of pokemon
             id: data.id, //id of pokemon
             picture: data.sprites['front_default'], //default sprite
             type: data.types.map(type => type.type.name).join(" / ") //returns the types from array to string
-        }));
+        }));      
         createPokemonCard(pokemon);
     });
 };
