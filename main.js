@@ -1,5 +1,4 @@
 const pokemonCard = document.querySelector(".pokemon-card");
-const searchInput = document.getElementById("search");
 
 const fetchPokemon = () => {
     const promises = [];
@@ -16,13 +15,13 @@ const fetchPokemon = () => {
             id: data.id, //id of pokemon
             picture: data.sprites['front_default'], //default sprite
             type: data.types.map(type => type.type.name).join(" / ") //returns the types from array to string
-        }));      
-        createPokemonCard(pokemon);
+        }));    
+        createPokemonCard(pokemon)
     });
 };
 
 const createPokemonCard = (some_pokemon) => {
-    for (let j = 0; j <= some_pokemon.length - 1; j++){
+    for (let j = 0; j <= some_pokemon.length - 1; j++) {
         const card = document.createElement("div");
         card.classList.add("pokemon-block")
 
@@ -53,5 +52,16 @@ const createPokemonCard = (some_pokemon) => {
     }
 };
 
-fetchPokemon();
+let pokeCards = document.querySelectorAll(".pokemon-card")
+const blocks = pokeCards[0].children;
+function liveSearch() {
+    let searchInput = document.getElementById("searchThing").value;
+    for (var i = 0; i < blocks.length; i++) {
+        if (blocks[i].innerText.toLowerCase().includes(searchInput.toLowerCase())) 
+            blocks[i].classList.remove("hide");
+        else blocks[i].classList.add("hide");
+    };
+};
+console.log(blocks);
 
+fetchPokemon();
